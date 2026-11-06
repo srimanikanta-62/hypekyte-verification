@@ -1,0 +1,5 @@
+{
+    "success": false,
+    "error": "GSTIN not found in GST database",
+    "fix": "The format is valid but GSTN has no record of it. Check for a typo; a newly issued GSTIN can take a day to appear. Not-found calls are never charged."
+}

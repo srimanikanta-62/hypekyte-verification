@@ -1,0 +1,5 @@
+{
+    "success": false,
+    "error": "Invalid GSTIN format. Must be 15 characters in pattern: 22AAAAA0000A1Z5",
+    "fix": "A GSTIN is 2 digits (state), 5 letters + 4 digits + 1 letter (PAN), 1 entity code, the letter Z, 1 check character. Invalid-format calls are never charged. Test your integration free with GSTIN 00AAAAA0000A1ZT."
+}

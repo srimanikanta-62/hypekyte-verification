@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "gstin": "00AAAAA0000A1ZT",
+    "test": true,
+    "data": {
+        "legal_name": "GSTINAPI TEST PRIVATE LIMITED",
+        "trade_name": "GSTINAPI SANDBOX",
+        "registration_date": "2020-01-01",
+        "status": "Active",
+        "taxpayer_type": "Regular",
+        "address": "1, Test Building, Test Street, Test Locality",
+        "city": "Test Locality",
+        "state_code": "00",
+        "state": "Test State",
+        "pincode": "395010",
+        "mobile": "9999999999",
+        "email": "accounts@example.com"
+    },
+    "contact_found": true,
+    "note": null,
+    "gst_details_available": true,
+    "credits_charged": 0,
+    "billed_to": "test",
+    "credits_remaining": 10,
+    "free_remaining": 0,
+    "response_ms": 0
+}

@@ -1,0 +1,146 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * Minimal theme: white surfaces, near-black text, grey for secondary text and lines.
+ * Black is the only accent; green / amber / red are reserved for verification status.
+ * One typeface (Schibsted Grotesk). Shadcn token names are kept for the ui/ primitives.
+ */
+
+@theme inline {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-pass: var(--pass);
+  --color-pass-bg: var(--pass-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --color-fail: var(--fail);
+  --color-fail-bg: var(--fail-bg);
+  --color-mark: var(--mark);
+
+  --color-background: var(--page);
+  --color-foreground: var(--ink);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--surface);
+  --color-secondary: var(--page);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--page);
+  --color-muted-foreground: var(--ink-2);
+  --color-accent: var(--page);
+  --color-accent-foreground: var(--ink);
+  --color-destructive: var(--fail);
+  --color-destructive-foreground: var(--surface);
+  --color-success: var(--pass);
+  --color-warning: var(--warn);
+  --color-border: var(--line);
+  --color-input: var(--line-2);
+  --color-ring: var(--ink);
+
+  --font-sans: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+:root {
+  --page: #f6f6f4;
+  --surface: #ffffff;
+  --ink: #151515;
+  --ink-2: #5c5c5a;
+  --ink-3: #9a9a96;
+  --line: #e7e7e3;
+  --line-2: #d2d2cd;
+  --pass: #1d7a4c;
+  --pass-bg: #e8f3ec;
+  --warn: #a6620a;
+  --warn-bg: #fbf1e1;
+  --fail: #b83a2e;
+  --fail-bg: #f9e9e7;
+  --mark: #fff0a8;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: var(--page);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  ::selection {
+    background: var(--mark);
+  }
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------------ motion */
+@keyframes buzz {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+@keyframes slide-down {
+  from { transform: translateY(-12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-3px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-buzz { animation: buzz 0.4s ease-in-out 2; }
+@utility animate-slide-down { animation: slide-down 0.25s ease-out both; }
+@utility animate-shake { animation: shake 0.35s ease-in-out; }
+@utility animate-fade { animation: fade-up 0.25s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  body { background: white; }
+  .no-print { display: none !important; }
+}

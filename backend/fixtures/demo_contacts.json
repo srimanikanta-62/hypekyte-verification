@@ -1,0 +1,6 @@
+{
+  "_about": "SIMULATED GST-registered contacts. gstinapi.in's /v1/gstin/{gstin}/contact endpoint (which returns the mobile filed with the GST registration) is paid-only, and this demo account is on the free tier. Results built from these entries are labelled 'simulated' everywhere in the API and UI. Set GST_CONTACT_MODE=live with a paid key to use the real endpoint. Add your own demo GSTINs here as GSTIN -> mobile.",
+  "contacts": {
+    "29AAJCK4821M1Z1": { "mobile": "9876543210", "label": "demo: checksum-valid, unregistered GSTIN" }
+  }
+}

@@ -1,0 +1,36 @@
+# Secrets: never commit keys or credentials (only the blank .env.example template)
+.env
+.env.*
+*.env
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials*.json
+*service-account*.json
+firebase-admin*.json
+
+# Local data
+*.db
+*.sqlite3
+*.log
+
+# Python
+venv/
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Node / build
+node_modules/
+dist/
+.output/
+.vite/
+.tanstack/
+.nitro/
+
+# OS
+.DS_Store
+__MACOSX/
